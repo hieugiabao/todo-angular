@@ -1,0 +1,32 @@
+<div *ngIf="!todo && loading">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="!loading && !todo">
+  <span>todo not found</span>
+</div>
+
+<div class="container" *ngIf="todo">
+  <p class="title">Update job</p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Title here..." [(ngModel)]="todo.title" />
+      <mat-icon matSuffix colot>title</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Content</mat-label>
+      <textarea
+        matInput
+        placeholder="Content here..."
+        [(ngModel)]="todo.content"
+      ></textarea>
+      <mat-icon matSuffix colot>details</mat-icon>
+    </mat-form-field>
+  </p>
+  <button mat-raised-button color="primary" (click)="update(todo)">
+    Update
+  </button>
+</div>

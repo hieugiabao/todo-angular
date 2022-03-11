@@ -1,0 +1,24 @@
+<div class="container">
+  <p class="title">Create a new job</p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Title here..." #todoTitle />
+      <mat-icon matSuffix colot>title</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Content</mat-label>
+      <textarea matInput placeholder="Content here..." #todoContent></textarea>
+      <mat-icon matSuffix colot>details</mat-icon>
+    </mat-form-field>
+  </p>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="addNewTodo(todoTitle.value, todoContent.value)"
+  >
+    Create
+  </button>
+</div>

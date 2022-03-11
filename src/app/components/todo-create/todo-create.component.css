@@ -1,0 +1,26 @@
+.container {
+  height: 500px;
+  width: 850px;
+  margin: 0 auto;
+  border-radius: 6px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #333;
+}
+
+.title {
+  font-size: 24px;
+  font-family: "Dancing script", cursive;
+  color: #ed6756;
+}
+
+mat-form-field {
+  width: 600px;
+}
+
+mat-form-field textarea {
+  height: 145px;
+  max-height: 150px;
+}

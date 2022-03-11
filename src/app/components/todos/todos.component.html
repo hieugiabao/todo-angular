@@ -1,0 +1,68 @@
+<div class="container">
+  <div>
+    <input type="text" [(ngModel)]="query" />
+    <button mat-button (click)="find()"><mat-icon>search</mat-icon></button>
+  </div>
+  <mat-card
+    class="example-card"
+    *ngFor="let todo of todoResponse.todos"
+    (click)="nextTo('/todo/detail/' + todo.id)"
+  >
+    <mat-card-title>{{ todo.title | titlecase }}</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-content>
+      <p>{{ todo.content }}</p>
+    </mat-card-content>
+    <div class="menu" (click)="$event.stopPropagation()">
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>favorite</mat-icon>
+          <span>LIKE</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>share</mat-icon>
+          <span>SHARE</span>
+        </button>
+      </mat-menu>
+    </div>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="accent"
+        title="edit work"
+        (click)="nextTo('/todo/edit/' + todo.id)"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        title="delete work"
+        (click)="openDialog(todo.id); $event.stopPropagation()"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-paginator
+    [length]="todoResponse.totalCount"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[4, 5, 6, 7, 8]"
+    aria-label="Select page"
+    (page)="onClick($event)"
+  >
+  </mat-paginator>
+</div>
+
+<a class="create-btn" routerLink="/todo/create">
+  <button mat-fab aria-label="Create a new to do">
+    <mat-icon color="primary">edit</mat-icon>
+  </button>
+</a>

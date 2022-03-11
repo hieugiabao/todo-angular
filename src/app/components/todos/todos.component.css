@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  /* align-items: center; */
+  margin-left: 150px;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.title {
+  color: #ed6756;
+  font-size: 48px;
+  font-family: "Dancing Script", cursive;
+}
+
+.example-card {
+  max-width: 800px;
+  max-height: 500px;
+}
+
+mat-card {
+  margin-top: 42px;
+  cursor: pointer;
+  position: relative;
+}
+
+mat-card-content p {
+  margin-top: 16px;
+}
+
+.container button {
+  max-width: 30px;
+}
+
+.create-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+}
+
+.menu {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+mat-paginator {
+  margin: 32px 0;
+  border-radius: 3px;
+}
+
+input {
+  margin-top: 16px;
+  height: 30px;
+  width: 350px;
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 16px;
+  display: inline;
+}

@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "title": "my first work",
+      "content": "chi se cho thay do",
+      "id": 1
+    },
+    {
+      "title": "My second work",
+      "content": "complete spring boot today",
+      "id": 2
+    },
+    {
+      "title": "my first work",
+      "content": "oke",
+      "id": 3
+    }
+  ]
+}
